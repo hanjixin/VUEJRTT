@@ -14,7 +14,7 @@
       <router-link :to='{name:"detail", params:{ id:item.item_id }}' class="article_link" >
         <p class="totle">{{item.title}}</p>
         <div class="img_container">
-          <img :src="item.image_url" alt="" v-if="item.image_url">
+          <img :src="item.image_url" alt="" v-if="item.image_url" style="width: 100%">
           <img :src="itt.url" style="width: 33%;height: auto" v-for="itt in item.image_list"/>
 
         </div>
@@ -72,7 +72,7 @@ export  default {
      })(window, document)
 
      console.log(window.ascp.getHoney());
-     this.$http.get('list/?ac=wap&count=20&format=json_raw&as='+window.ascp.getHoney().as+'&cp='+window.ascp.getHoney().cp+'&min_behot_time='+(new Date().getTime()+'').slice(0,9)).then(res=>{
+     this.$http.get('list/?ac=wap&count=20&format=json_raw&as=A135499DB474538&cp='+window.ascp.getHoney().cp+'&min_behot_time='+(new Date().getTime()+'').slice(0,9)).then(res=>{
        console.log(res)
        if(res.data.data){
          this.list=[... new Set(this.list.concat(res.data.data))]

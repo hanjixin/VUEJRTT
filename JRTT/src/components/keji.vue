@@ -15,7 +15,7 @@
       <router-link :to='{name:"detail", params:{ id:item.item_id }}' class="article_link" >
         <p class="totle">{{item.title}}</p>
         <div class="img_container">
-          <img :src="item.image_url" alt="" v-if="item.image_url">
+          <img :src="item.image_url" alt="" v-if="item.image_url" style="width: 100%">
           <img :src="itt.url" style="width: 33%;height: auto" v-for="itt in item.image_list"/>
 
         </div>
